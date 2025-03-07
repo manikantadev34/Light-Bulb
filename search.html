@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search in Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Search in an Array</h2>
+    <p>Enter a number to search:</p>
+    
+    <input type="number" id="searchInput" placeholder="Enter number">
+    <button onclick="searchArray()">Search</button>
+    
+    <p id="result"></p>
+
+    <script>
+        // Sample array
+        let numbers = [10, 20, 30, 40, 50];
+
+        function searchArray() {
+            let input = document.getElementById("searchInput").value;
+            let target = parseInt(input); // Convert input to number
+            let index = numbers.indexOf(target); // Search for number
+
+            if (index !== -1) {
+                document.getElementById("result").innerHTML = `✅ Found at index ${index}`;
+            } else {
+                document.getElementById("result").innerHTML = "❌ Not Found";
+            }
+        }
+    </script>
+
+</body>
+</html>
